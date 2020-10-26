@@ -3,20 +3,28 @@ package com.bbl.test;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
 
 import java.io.IOException;
 
 /**
+ * 读取excel文件
  * 创建日期 : 2020/10/26 20:02
+ *
+ * 文件格式
+ * XSSFWorkbook：工作簿
+ * XSSFSheet：工作表
+ * XSSFRow：行
+ * XSSFCell：单元格
  */
 public class ReadForExcel {
 
     @Test
     public void  readForExcel() throws IOException {
         //创造工作簿,构造方法文件路径
-        XSSFWorkbook wk = new XSSFWorkbook("d:\\aa.xlsx");
+        Workbook wk = new XSSFWorkbook("d:\\aa.xlsx");
         //获取工作表,下标是从0开始
         Sheet sht = wk.getSheetAt(0);
         //获所有的行,下标也是从0开始的
